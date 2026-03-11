@@ -1,8 +1,7 @@
-streamlit==1.42.0
-pandas>=2.2
-numpy>=1.26
+streamlit
+pandas
+numpy
 scikit-learn
 matplotlib
 seaborn
 plotly
-rich<14
