@@ -1,3 +1,9 @@
+import asyncio
+try:
+    asyncio.get_event_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -115,4 +121,5 @@ elif page == "Recommendation System":
 
     st.dataframe(
         recommended[['track_name','track_popularity','explicit']].head(5)
+
     )
