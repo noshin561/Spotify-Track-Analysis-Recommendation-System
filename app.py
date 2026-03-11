@@ -1,6 +1,10 @@
 import asyncio
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
+
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -121,5 +125,6 @@ elif page == "Recommendation System":
         recommended[['track_name','track_popularity','explicit']].head(5)
 
     )
+
 
 
